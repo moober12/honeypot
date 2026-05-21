@@ -35,6 +35,11 @@ RUN apk --no-cache -U upgrade && \
     echo "elasticsearch.shardTimeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
     echo "unifiedSearch.autocomplete.valueSuggestions.timeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
     echo "unifiedSearch.autocomplete.valueSuggestions.terminateAfter: 1000000" >> /usr/share/kibana/config/kibana.yml && \
+    echo "server.name: HiveGuard" >> /usr/share/kibana/config/kibana.yml && \
+    echo "xpack.banners.placement: top" >> /usr/share/kibana/config/kibana.yml && \
+    echo 'xpack.banners.textContent: "HiveGuard // Threat Intelligence Platform"' >> /usr/share/kibana/config/kibana.yml && \
+    echo "xpack.banners.textColor: \"#00e5ff\"" >> /usr/share/kibana/config/kibana.yml && \
+    echo "xpack.banners.backgroundColor: \"#0a1929\"" >> /usr/share/kibana/config/kibana.yml && \
     rm -rf /usr/share/kibana/optimize/bundles/* && \
     /usr/share/kibana/bin/kibana --optimize --allow-root && \
     addgroup -g 2000 kibana && \

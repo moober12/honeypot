@@ -781,11 +781,11 @@
         - "Rocky"
         - "Ubuntu"
 
-    - name: Clone / Update T-Pot repository (All)
+    - name: Clone / Update HiveGuard repository (All)
       git:
-        repo: 'https://github.com/telekom-security/tpotce'
+        repo: 'https://github.com/moober12/honeypot'
         dest: '/home/{{ ansible_user_id }}/tpotce/'
-        version: master
+        version: main
         clone: yes
         update: no
       when: ansible_distribution in ["AlmaLinux", "Debian", "Fedora", "openSUSE Tumbleweed", "Raspbian", "RedHat", "Rocky", "Ubuntu"]
